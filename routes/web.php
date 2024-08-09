@@ -54,5 +54,10 @@ Route::get('/notifications', function () {
     return view('notifications');
 })->name('notifications');
 
+// Add new bin page route
+Route::get('/addnewbin', function () {
+    return view('addnewbin');
+})->name('addnewbin');
+
 
 require __DIR__.'/auth.php';
