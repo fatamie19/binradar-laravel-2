@@ -28,7 +28,8 @@
                     <button type="submit" class="w-full text-white hover:bg-green-400 p-2 rounded-md font-semibold" style="background-color: rgb(22 163 74);">LOG IN</button>
                 </form>
                 <div class="mt-4 text-center">
-                    <a href="{{ route('loginadmin') }}" class="text-black-500 hover:text-black-300 text-xs font-semibold">admin</a>
+                    <a href="{{ route('loginadmin') }}" class="text-black-500 hover:text-black-300 text-xs font-semibold">Login as Admin</a>
+                </div>
             </div>
         </div>
     </div>

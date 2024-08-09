@@ -15,7 +15,7 @@
             <div class="w-1/2 p-6">
                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Login</h2>
                 <p class="text-gray-700 dark:text-gray-300 py-2">Securely login to your account</p>
-                <form class="mt-4" action="{{ route('login') }}" method="POST">
+                <form class="mt-4" action="{{ route('loginadmin') }}" method="POST">
                     @csrf
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Email</label>
@@ -28,7 +28,7 @@
                     <button type="submit" class="w-full text-white hover:bg-green-400 p-2 rounded-md font-semibold" style="background-color: rgb(22 163 74);">LOG IN</button>
                 </form>
                 <div class="mt-4 text-center">
-                <a href="{{ route('login') }}" class="text-black-500 hover:text-black-300 text-xs font-semibold">User</a></div>
+                <a href="{{ route('login') }}" class="text-black-500 hover:text-black-300 text-xs font-semibold">Login as User</a></div>
             </div>
         </div>
     </div>
