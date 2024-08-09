@@ -39,4 +39,20 @@ Route::get('/login', function () {
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
 
+// About Us page route
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
+// Analysis page route
+Route::get('/analysis', function () {
+    return view('analysis');
+})->name('analysis');
+
+// Notifications page route
+Route::get('/notifications', function () {
+    return view('notifications');
+})->name('notifications');
+
+
 require __DIR__.'/auth.php';
