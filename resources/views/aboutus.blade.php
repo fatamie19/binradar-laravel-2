@@ -6,7 +6,7 @@
     </x-slot>
 
         <h1 class="flex justify-center relative text-3xl" style="top: 100px; color: #16a34a">Bin Radar</h1>
-        <div style="width: 50px; height: 50px;"><img src="" ></div>
+        <div style="width: 50px; height: 50px;"></div>
         <p class="flex justify-center relative text-2xl" style="top: 130px; text-align: center;" >
 
             Welcome to BinRadar! We are on a mission to <br>
