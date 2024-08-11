@@ -53,8 +53,7 @@
                 <div class="bg-white flex flex-col items-center p-4 border border-border rounded-lg shadow-md bg-card w-64 sm:w-80 lg:w-96 mb-4">
                     <img aria-hidden="true" alt="bin-image" src="https://openui.fly.dev/openui/100x100.svg?text=🗑️" class="w-12 h-12"/>
                     <span class="mt-2 font-semibold">{{ $bin->name }}</span>
-                    <span class="text-muted-foreground p-2">ID: {{ $bin->bin_id }}</span>
-                    <span class="text-muted-foreground p-2">Code: {{ $bin->verification_code }}</span>
+                    <span class="text-muted-foreground p-2">Successfully connected</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="green" class="size-6 text-green">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                     </svg>
