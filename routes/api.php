@@ -24,9 +24,4 @@ Route::middleware('api')->group(function () {
         return response()->json(['status' => 'success', 'received_data' => $sensorData]);
     });
 
-    // A test route to confirm the API is working
-    Route::get('/test', function () {
-        return response()->json(['message' => 'API is working']);
-    });
-
 });
