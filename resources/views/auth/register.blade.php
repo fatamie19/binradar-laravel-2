@@ -44,9 +44,9 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <a href="{{ route('register') }}" class="text-white text-sm p-2 rounded-md mr-4 font-smibold w-100" style="background-color: rgb(22 163 74);">
+            <button type="submit" class="text-white text-sm p-2 rounded-md mr-4 font-smibold w-100" style="background-color: rgb(22 163 74);">
     {{ __('Register') }}
-</a>    </div>
+</button></a>    </div>
     </form>
 </x-guest-layout>
 
