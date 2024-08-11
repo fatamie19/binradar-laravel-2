@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\BinController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,5 +60,8 @@ Route::get('/addnewbin', function () {
     return view('addnewbin');
 })->name('addnewbin');
 
+Route::post('/bins', [BinController::class, 'store'])->name('bins.store');
+
+Route::get('/dashboardadmin', [BinController::class, 'index'])->middleware(['auth'])->name('dashboardadmin');
 
 require __DIR__.'/auth.php';
