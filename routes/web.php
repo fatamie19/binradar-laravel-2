@@ -64,4 +64,6 @@ Route::post('/bins', [BinController::class, 'store'])->name('bins.store');
 
 Route::get('/dashboardadmin', [BinController::class, 'index'])->middleware(['auth'])->name('dashboardadmin');
 
+Route::delete('/bins/{id}', [BinController::class, 'destroy'])->name('bins.destroy');
+
 require __DIR__.'/auth.php';

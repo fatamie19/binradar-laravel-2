@@ -24,6 +24,8 @@
           </div>
             @endif
           
+            <br>
+            
           <div class="bg-card bg-white p-6 rounded-lg shadow-md w-full max-w-md">
           <form class="mt-4" action="{{ route('bins.store') }}" method="POST">
             @csrf

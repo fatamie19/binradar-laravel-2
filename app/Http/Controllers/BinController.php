@@ -34,4 +34,15 @@ class BinController extends Controller
         $bins = Bin::all();
         return view('dashboardadmin', compact('bins'));
     }
+
+    public function destroy($id)
+    {
+        // Find the bin by ID and delete it
+        $bin = Bin::findOrFail($id);
+        $bin->delete();
+
+        // Redirect back to the admin dashboard with a success message
+        return redirect()->route('dashboardadmin')->with('success', 'Bin deleted successfully!');
+    }
+
 }
