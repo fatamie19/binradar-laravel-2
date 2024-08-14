@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-appadmin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Admin Dashboard') }}
@@ -72,10 +72,59 @@
               </div>
           @endforeach
       </div>                              
-            <div class="flex justify-center">
-                <a href="{{ route('addnewbin') }}" class="bg-white border-border border-2 shadow-md rounded-lg p-4 mt-auto"> + Add new rubbish bin</a>
-            </div>
+      <div class="flex justify-center">
+        <button id="openModal" class="bg-white border-border border-2 shadow-md rounded-lg p-4 mt-auto"> + Add new rubbish bin</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="binModal" class="fixed inset-0 flex items-center justify-center z-50 hidden bg-gray-800 bg-opacity-30">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md relative">
+        <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+            &times;
+        </button>
+        <h1 class="text-2xl font-bold mb-4 py-4 text-center">Add New Rubbish Bin</h1> 
+
+        @if ($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">Whoops!</strong>
+            <span class="block sm:inline">{{ $errors->first() }}</span>
+        </div>
+        @endif
+        
+        <form class="mt-4" action="{{ route('bins.store') }}" method="POST">
+            @csrf
+            <label class="block text-muted-foreground" for="bin-name">Name of the bin</label>
+            <input type="text" id="bin-name" name="name" placeholder="Prayer room Bin" class="mt-1 p-2 w-full border border-border rounded-md focus:outline-none focus:ring focus:ring-ring"/>
+
+            <label class="block text-muted-foreground mt-4" for="bin-id">Bin ID</label>
+            <input type="text" id="bin-id" name="bin_id" placeholder="001" class="mt-1 p-2 w-full border border-border rounded-md focus:outline-none focus:ring focus:ring-ring"/>
+
+            <label class="block text-muted-foreground mt-4" for="verification-code">Verification Code</label>
+            <input type="text" id="verification-code" name="verification_code" placeholder="14hwc02" class="mt-1 p-2 w-full border border-border rounded-md focus:outline-none focus:ring focus:ring-ring"/>
+                  
+            <button type="submit" class="mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded-md w-full">Add</button>
+        </form>
+    </div>
+</div>
+        <script>
+          document.getElementById('openModal').addEventListener('click', function() {
+              document.getElementById('binModal').classList.remove('hidden');
+          });
+
+          document.getElementById('closeModal').addEventListener('click', function() {
+              document.getElementById('binModal').classList.add('hidden');
+          });
+
+          // Close modal when clicking outside of it
+          window.addEventListener('click', function(event) {
+              const modal = document.getElementById('binModal');
+              if (event.target === modal) {
+                  modal.classList.add('hidden');
+              }
+          });
+        </script>
+        
         </div>
       </body>
     </html>
-</x-app-layout>
+</x-appadmin-layout>
