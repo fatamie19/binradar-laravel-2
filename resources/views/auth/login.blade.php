@@ -30,6 +30,9 @@
                 <div class="mt-4 text-center">
                     <a href="{{ route('loginadmin') }}" class="text-black-500 hover:text-black-300 text-xs font-semibold">Login as Admin</a>
                 </div>
+                <div class="mt-4 text-center">
+                    <a href="{{ route('register') }}" class="text-green-600 hover:text-green-400 text-xs font-semibold">Register</a>
+                </div>
             </div>
         </div>
     </div>
