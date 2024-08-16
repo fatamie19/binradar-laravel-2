@@ -14,6 +14,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Regular user dashboard-bindetail route
+Route::get('/dashboard-bindetail', function () {
+    return view('dashboard-bindetail');
+})->middleware(['auth', 'verified'])->name('dashboard-bindetail');
+
 // Admin dashboard route
 Route::get('/dashboardadmin', function () {
     return view('dashboardadmin');
