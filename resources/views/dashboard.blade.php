@@ -17,7 +17,13 @@
                 <a href="dashboard-bindetail" class="p-4 rounded-md text-sm font-semibold text-black shadow" style="width: 800px; text-align: center">EXAMPLE</a>
             </div>
 
+            <br>
+            @foreach($bins as $bin)
+                <div class="bg-white shadow rounded-lg p-4 text-center" style="width: 800px; margin: 10px auto;">
+                    <a href="{{ route('bins.show', $bin->id) }}" class="text-lg font-semibold text-gray-700">{{ $bin->name }}</a>
+                </div>
+            @endforeach
+
         </div>
     </div>
-
 </x-app-layout>

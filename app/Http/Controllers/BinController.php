@@ -45,4 +45,16 @@ class BinController extends Controller
         return redirect()->route('dashboardadmin')->with('success', 'Bin deleted successfully!');
     }
 
+    public function dashboard()
+    {
+        $bins = Bin::all(); // Retrieve all bins
+        return view('dashboard', compact('bins')); // Pass the bins to the dashboard view
+    }
+
+    public function show($id)
+    {
+        $bin = Bin::findOrFail($id); // Find the bin by ID or fail if not found
+        return view('bins.show', compact('bin')); // Pass the bin data to the view
+    }
+
 }

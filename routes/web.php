@@ -71,4 +71,12 @@ Route::get('/dashboardadmin', [BinController::class, 'index'])->middleware(['aut
 
 Route::delete('/bins/{id}', [BinController::class, 'destroy'])->name('bins.destroy');
 
+// Regular user dashboard route
+Route::get('/dashboard', [BinController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+
+// Admin dashboard route
+Route::get('/dashboardadmin', [BinController::class, 'index'])->middleware(['auth'])->name('dashboardadmin');
+
+// Bin details route
+Route::get('/bins/{id}', [BinController::class, 'show'])->middleware(['auth'])->name('bins.show');
 require __DIR__.'/auth.php';
