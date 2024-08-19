@@ -5,6 +5,13 @@
         </h2>
     </x-slot>
 
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+        <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+      </head>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -14,16 +21,18 @@
 
 
             <div class="flex justify-center" style="padding-top: 50px">
-                <a href="dashboard-bindetail" class="p-4 rounded-md text-sm font-semibold text-black shadow" style="width: 800px; text-align: center">Living Room Bin</a>
+                <a href="dashboard-bindetail" class="p-4 rounded-md text-base font-semibold text-black shadow bg-white" style="width: 800px; text-align: center">Living Room Bin</a>
             </div>
 
             <br>
             @foreach($bins as $bin)
-                <div class="bg-white shadow rounded-lg p-4 text-center" style="width: 800px; margin: 10px auto;">
-                    <a href="{{ route('bins.show', $bin->id) }}" class="text-lg font-semibold text-gray-700">{{ $bin->name }}</a>
+                <div class="flex justify-center py-6">
+                    <a href="{{ route('bins.show', $bin->id) }}" class="p-4 rounded-md text-base font-semibold text-black shadow bg-white" style="width: 800px; text-align: center">{{ $bin->name }}</a>
                 </div>
             @endforeach
 
         </div>
     </div>
+
+    </html>
 </x-app-layout>
