@@ -21,13 +21,13 @@
 
 
             <div class="flex justify-center" style="padding-top: 50px">
-                <a href="dashboard-bindetail" class="p-4 rounded-md text-base font-semibold text-black shadow bg-white" style="width: 800px; text-align: center">Living Room Bin</a>
+                <a href="dashboard-bindetail" class="p-4 rounded-md text-base font-semibold text-black shadow-md bg-white" style="width: 800px; text-align: center">Living Room Bin</a>
             </div>
 
             <br>
             @foreach($bins as $bin)
                 <div class="flex justify-center py-6">
-                    <a href="{{ route('bins.show', $bin->id) }}" class="p-4 rounded-md text-base font-semibold text-black shadow bg-white" style="width: 800px; text-align: center">{{ $bin->name }}</a>
+                    <a href="{{ route('bins.show', $bin->id) }}" class="p-4 rounded-md text-base font-semibold text-black shadow-md bg-white" style="width: 800px; text-align: center">{{ $bin->name }}</a>
                 </div>
             @endforeach
 
