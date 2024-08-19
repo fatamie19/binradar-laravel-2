@@ -20,7 +20,7 @@
             <div class="relative shadow rounded-2xl" style="height: 200px; width: 400px; top: 60px; margin-left: auto; margin-right: auto;">
                 <div class="max-w-max rounded-t-2xl" style="background-color: #4CAF50; text-align: center; padding-top: 10px; padding-bottom: 10px;">
                     <p class="text-white">Date & Time</p>
-                    <p class="text-white">...</p>
+                    <p class="text-black">17th March 2024 / 03:30pm</p>
                 </div>
                 <p class="text-3xl" style="text-align: center; padding-top: 30px;">
                     Bin level capacity is low
@@ -31,7 +31,32 @@
         </div>
 
 {{--    level capacity --}}
-        <div class="absolute shadow" style="height: 500px; width: 500px; top: 200px; right: 250px">
+        <div class="absolute shadow flex justify-center" style="height: 500px; width: 500px; top: 200px; right: 250px">
+
+            <?php
+            $capacity = 20; // Change this value to test different capacity levels
+            $colors = array(
+                'high' => '#e52828', // Red (70-100%)
+                'medium' => '#dce528', // Yellow (30-70%)
+                'low' => '#3dbd2a' // Green (0-30%)
+            );
+
+            if ($capacity <= 30) {
+                $color = $colors['low'];
+            } elseif ($capacity <= 70) {
+                $color = $colors['medium'];
+            } else {
+                $color = $colors['high'];
+            }
+
+            $height = $capacity * 3; // Adjust the multiplier to change the height
+
+            echo '
+            <div class="relative" style="top: 100px; height: 300px; width:200px; overflow: hidden; border: solid 1px;">
+            <div style="position: absolute; bottom: 0; width: 200px; height: ' . $height . 'px; background-color: ' . $color . ';"></div>
+            </div>
+            <p class="absolute" style="top: 50%; font-size: 20px">'. $capacity .  '%</p>';
+            ?>
 
         </div>
 
